@@ -12,3 +12,12 @@ def scrape_linkedin_profile(url):
     name = soup.find('li', {'class': 'inline t-24 t-block t-normal break-words'}).get_text(strip=True)
     title = soup.find('h2', {'class': 'mt1 t-18 t-black t-normal'}).get_text(strip=True)
     company = soup.find('h2', {'class': 't-16 t-black t-bold'}).get_text(strip=True)
+
+    # Save info as dictionary
+    profile_info = {
+        'name': name,
+        'title': title,
+        'company': company,
+    }
+
+    return profile_info
